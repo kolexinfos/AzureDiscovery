@@ -1,4 +1,4 @@
-﻿$azSubs = Get-AzSubscription | Where-Object { $_.Name -Clike "*Internal*" }
+﻿$azSubs = Get-AzSubscription #| Where-Object { $_.Name -Clike "*Internal*" }
 
 foreach ( $azSub in $azSubs ) {
     
@@ -15,7 +15,7 @@ foreach ( $azSub in $azSubs ) {
 
             foreach ($nsg in $nsgs) {
 
-                #Write-Output $nsg.Name
+                Write-Output $nsg.Name
                 #Write-Output $nsg.NetworkInterfaces.Count                
         
                 if($nsg.NetworkInterfaces.Count -gt 0){
